@@ -1,0 +1,83 @@
+#!/usr/bin/env php
+<?php
+spl_autoload_register(function ($class){
+    require_once str_replace('\\' , '/',$class).'.php';
+    set_include_path('../'.str_replace('\\' , '/',$class).'.php');
+    spl_autoload($class);
+//    loadClass($class, "classes3/", $classSuffix=".class.php");
+
+//    echo '<h2>'.$class.'</h2><br>';
+});
+require_once 'app/help/helpers.php';
+require_once 'app/mytest/route.php';
+
+
+
+//نحوه گرفتن یک داده وورودی از کاربران-------------------------------------------------------------------------
+//if (!defined("STDIN")){
+//define("STDIN", fopen('php://stdin','r'));
+//define("STDOUT", fopen('php://stdout','w'));
+//define("STDERR", fopen('php://stderr','w'));
+//}
+//echo "\e[32m\$strName=\e[0m";
+//$strName = fread(STDIN, 80);//get 80 character from commandLine(CLI)
+//echo $strName;
+//نحوه گرفتن یک داده وورودی از کاربران-------------------------------------------------------------------------
+//استفاده از موارد زیر برای دریافت وورودی های کاربر ::
+//$_SERVER["argv"]  :  یک آرایه از تعداد وورودی های پس از عبارت پی اچ پی را تحویل میدهد
+//$_SERVER["argc"]  :   تعداد اعضای آرایه بالا را تحویل میدهد
+
+
+
+
+//print_r($argv);
+//
+//print_r($argc);
+//echo "\n";
+//$opts = getopt("v:d::y",["table::","balad","readable","tan","pop"] , $opts4);
+//var_dump($opts);
+
+//echo "Are you sure you want to do this?  Type 'yes' to continue: ";
+//$handle = fopen ("php://stdin","r");
+//$line = fgets($handle);
+//if(trim($line) == 'yes'){
+//    echo "ABORTING!\n";
+//    exit;
+//}
+
+
+
+// Without properties
+//$myclassname = "anewclassname";
+//eval("class {$myclassname} { }");
+// With a property
+//$myclassname = "anewclassname";
+//$myproperty = "newproperty";
+//eval("class {$myclassname} { protected \${$myproperty}; }";
+
+//unlink('mm');
+//$new = new \App\Models\User();
+//$newUser = clone $new;
+
+
+
+//$make =new \Source\Artisan\CmdOperation;
+
+
+
+
+
+
+$cmd =new \App\Mytest\CmdTestsFunction;
+
+
+
+
+//classkit_method_rename (\App\Models\User::class , 'a' , 'l');
+//copy('app/models/user.php' , 'app/models/newuser.php');
+//class_alias(\App\Models\User::class,\App\Models\newUser::class);
+
+
+//class_alias('\App\Models\User' , 'new');
+
+?>
